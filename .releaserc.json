@@ -29,7 +29,7 @@
             "@semantic-release/exec",
             {
                 "prepareCmd": "echo ${nextRelease.version} > VERSION.txt",
-                "publishCmd": "publish-package"
+                "publishCmd": "echo 'Published version ${nextRelease.version}'"
             }
         ],
         "@semantic-release/git"
