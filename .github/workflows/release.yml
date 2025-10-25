@@ -36,8 +36,8 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "lts/*"
-      - name: Install dependencies globally
-        run: npm install -g @semantic-release/exec @semantic-release/commit-analyzer @semantic-release/git @semantic-release/github @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
+      - name: Install dependencies
+        run: npm install @semantic-release/exec @semantic-release/commit-analyzer @semantic-release/git @semantic-release/github @semantic-release/release-notes-generator conventional-changelog-conventionalcommits -D
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
