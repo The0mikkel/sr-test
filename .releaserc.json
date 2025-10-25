@@ -26,12 +26,6 @@
             }
         ],
         [
-            "@semantic-release/npm",
-            {
-                "npmPublish": false
-            }
-        ],
-        [
             "@semantic-release/exec",
             {
                 "prepareCmd": "echo ${nextRelease.version} > VERSION.txt",
