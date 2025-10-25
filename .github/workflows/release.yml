@@ -52,7 +52,8 @@ jobs:
       - name: Set default configuration file for semantic-release
         if: steps.check-config.outputs.config_exists == 'false'
         run: |
-          echo '{
+            cat << 'EOF' > .releaserc.json
+            {
                 "branches": [
                     "main",
                     {
@@ -83,7 +84,7 @@ jobs:
                         "@semantic-release/exec",
                         {
                             "prepareCmd": "echo ${nextRelease.version} > version.txt",
-                            "publishCmd": "echo \'Published version ${nextRelease.version}\'"
+                            "publishCmd": "echo 'Published version ${nextRelease.version}'"
                         }
                     ],
                     [
@@ -94,7 +95,8 @@ jobs:
                         }
                     ]
                 ]
-            }' > .releaserc.json
+            }
+            EOF
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
