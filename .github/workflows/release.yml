@@ -83,7 +83,7 @@ jobs:
                         "@semantic-release/exec",
                         {
                             "prepareCmd": "echo ${nextRelease.version} > version.txt",
-                            "publishCmd": "echo 'Published version ${nextRelease.version}'"
+                            "publishCmd": "echo \'Published version ${nextRelease.version}\'"
                         }
                     ],
                     [
