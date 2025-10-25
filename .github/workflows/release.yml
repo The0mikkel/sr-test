@@ -35,8 +35,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "lts/*"
-          cache: "npm"
+          node-version: "lts"
+        #   cache: "npm"
       - name: Install dependencies globally
         run: npm install -g @semantic-release/commit-analyzer @semantic-release/git @semantic-release/github @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
