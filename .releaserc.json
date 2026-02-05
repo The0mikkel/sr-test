@@ -39,14 +39,17 @@
         [
             "semantic-release-pypi",
             {
-                "pypiPublish": false,
+                "pypiPublish": true,
                 "repoUrl": "https://test.pypi.org/legacy/"
             }
         ],
         [
             "@semantic-release/git",
             {
-                "assets": ["VERSION.txt", "pyproject.toml"],
+                "assets": [
+                    "VERSION.txt",
+                    "pyproject.toml"
+                ],
                 "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ]
