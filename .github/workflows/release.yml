@@ -46,7 +46,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-          PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
         run: npx semantic-release | tee semantic-release.log
       - name: Archive release log
         uses: actions/upload-artifact@v5
