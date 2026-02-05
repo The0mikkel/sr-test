@@ -7,7 +7,7 @@
         },
         {
             "name": "pre-release",
-            "prerelease": "r"
+            "prerelease": "pr"
         }
     ],
     "plugins": [
