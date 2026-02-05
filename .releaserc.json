@@ -39,7 +39,8 @@
         [
             "semantic-release-pypi",
             {
-                "pypiPublish": false
+                "pypiPublish": false,
+                "repoUrl": "https://test.pypi.org/legacy/"
             }
         ],
         [
