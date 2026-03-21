@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - pre-release
   workflow_call:
     secrets:
       RELEASE_GH_TOKEN:
@@ -26,6 +27,8 @@ jobs:
       id-token: write
     outputs:
       version: ${{ steps.version.outputs.version }}
+    environment:
+      name: Release
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,6 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.RELEASE_GH_TOKEN || secrets.GITHUB_TOKEN }}
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: npx semantic-release | tee semantic-release.log
       - name: Archive release log
         uses: actions/upload-artifact@v5
